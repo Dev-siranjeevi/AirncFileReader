@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reader</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="Container">
+      <div class="container-wrapper">
+        <div class="navigation">
+          <div class="nav-wrapper">
+            <div class="searchoptions fl fl-spcbtw" id="filters">
+              <div class="searchParams">
+                <input
+                  type="text"
+                  id="filterSearch"
+                  placeholder="Search"
+                  maxlength="16"
+                  minlength="4"
+                />
+                <span class="subtext">ICAO/Waypoint/Procedure</span>
+              </div>
+              <button id="search-btn">
+                <svg
+                  height="20px"
+                  id="searchicon"
+                  viewBox="0 0 50 50"
+                  width="20px"
+                >
+                  <rect fill="none" height="50" width="50" />
+                  <circle
+                    cx="21"
+                    cy="20"
+                    fill="none"
+                    r="16"
+                    stroke-miterlimit="10"
+                  />
+                  <line
+                    stroke-miterlimit="10"
+                    x1="32.229"
+                    x2="45.5"
+                    y1="32.229"
+                    y2="45.5"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="filter">
+              <p class="filterTitle subTitle">Filtered For</p>
+              <hr />
+              <div class="filtersAdded">
+                <!-- Dynamically added based on users input -->
+              </div>
+            </div>
+            <div class="contentTree" id="treeView">
+              <p class="subTitle" id="countofprocedures">Procedure List</p>
+              <hr />
+              <div class="list" id="navigateList">
+                <h2 class="proctype-title" id="lookmeup">Procedure Tree</h2>
+                <ul>
+                  <li>
+                    <h4 class="proctype" data-parent="0">Empty</h4>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="uploading">
+              <hr />
+              <label
+                for="fileUpload"
+                class="fileUpload-lbl"
+                id="customFileUpload"
+              >
+                <input type="file" name="" id="fileUpload" />
+                Click to upload
+              </label>
+              <p id="loadedFileName">
+                File Name:<span id="loadedFile" class="fileEffDate active">
+                  Effective date</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Default -->
+        <div class="contentdiv printable" id="contendDiv">
+          <div class="tabulate" id="fulltbl">
+            <div class="table-wrapper">
+              <div class="procTable" id="tablecontainer"></div>
+            </div>
+
+            <div class="table-wrapper lpvTable">
+              <div id="codingminima">
+                <table class="minimaTable" id="minima"></table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="onlystorage" id="storedata"></div>
+      </div>
+    </div>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
